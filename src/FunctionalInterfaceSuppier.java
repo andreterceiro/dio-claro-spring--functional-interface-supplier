@@ -6,7 +6,10 @@ import java.util.stream.Stream;
 public class FunctionalInterfaceSuppier {
     public static void main(String[] args) throws Exception {
         FunctionalInterfaceSuppier.forma1();
+        System.out.println("----------------");
         FunctionalInterfaceSuppier.forma2();
+        System.out.println("----------------");
+        FunctionalInterfaceSuppier.forma3();
     }
 
     private static void forma1() {
@@ -32,4 +35,23 @@ public class FunctionalInterfaceSuppier {
         // This is the only difference from forma1()
         listaSaudacoes.forEach(System.out::println);
     }
+
+    private static void forma3() {
+        List<String> listaSaudacoes = Stream
+            .generate(
+                new Supplier<String>() {
+                    @Override
+                    public String get() {
+                        return "Seja bem vindo pela forma 3";
+                    }
+                }
+            )
+            .limit(2)
+            .collect(Collectors.toList());
+
+        // This time we will use the method reference under this message
+        // This is the only difference from forma1()
+        listaSaudacoes.forEach(System.out::println);
+    }
+
 }
