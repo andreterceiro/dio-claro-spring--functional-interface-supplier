@@ -3,15 +3,15 @@ import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class FunctionalInterfaceSuppier {
+public class FunctionalInterfaceSupplier {
     public static void main(String[] args) throws Exception {
-        FunctionalInterfaceSuppier.forma1();
+        FunctionalInterfaceSupplier.forma1();
         System.out.println("----------------");
-        FunctionalInterfaceSuppier.forma2();
+        FunctionalInterfaceSupplier.forma2();
         System.out.println("----------------");
-        FunctionalInterfaceSuppier.forma3();
+        FunctionalInterfaceSupplier.forma3();
         System.out.println("----------------");
-        FunctionalInterfaceSuppier.forma4();
+        FunctionalInterfaceSupplier.forma4();
     }
 
     private static void forma1() {
