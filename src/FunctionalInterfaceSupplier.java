@@ -3,7 +3,15 @@ import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+/**
+ * Class to execute tests related to the functional interface supplier
+ */
 public class FunctionalInterfaceSupplier {
+    /**
+     * Main method to execute manual tests through CLI
+     *
+     * @param args CLI arguments (ignored)
+     */
     public static void main(String[] args) throws Exception {
         FunctionalInterfaceSupplier.forma1();
         System.out.println("----------------");
@@ -14,6 +22,9 @@ public class FunctionalInterfaceSupplier {
         FunctionalInterfaceSupplier.forma4();
     }
 
+    /**
+     * Way 1 to use the functional interface supplier
+     */
     private static void forma1() {
         Supplier<String> saudacao = () -> "Seja bem vindo pela forma 1";
 
@@ -25,6 +36,9 @@ public class FunctionalInterfaceSupplier {
         listaSaudacoes.forEach(s -> System.out.println(s));
     }
 
+    /**
+     * Way 2 to use the functional interface supplier
+     */
     private static void forma2() {
         Supplier<String> saudacao = () -> "Seja bem vindo pela forma 2";
 
@@ -38,6 +52,9 @@ public class FunctionalInterfaceSupplier {
         listaSaudacoes.forEach(System.out::println);
     }
 
+    /**
+     * Way 3 to use the functional interface supplier
+     */
     private static void forma3() {
         List<String> listaSaudacoes = Stream
             .generate(
@@ -56,6 +73,9 @@ public class FunctionalInterfaceSupplier {
         listaSaudacoes.forEach(System.out::println);
     }
 
+    /**
+     * Way 4 to use the functional interface supplier
+     */
     private static void forma4() {
         List<String> listaSaudacoes = Stream
             .generate(() -> "Seja bem vindo pela forma 4")
