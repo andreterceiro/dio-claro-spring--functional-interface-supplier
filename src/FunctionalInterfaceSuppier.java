@@ -10,6 +10,8 @@ public class FunctionalInterfaceSuppier {
         FunctionalInterfaceSuppier.forma2();
         System.out.println("----------------");
         FunctionalInterfaceSuppier.forma3();
+        System.out.println("----------------");
+        FunctionalInterfaceSuppier.forma4();
     }
 
     private static void forma1() {
@@ -46,6 +48,17 @@ public class FunctionalInterfaceSuppier {
                     }
                 }
             )
+            .limit(2)
+            .collect(Collectors.toList());
+
+        // This time we will use the method reference under this message
+        // This is the only difference from forma1()
+        listaSaudacoes.forEach(System.out::println);
+    }
+
+    private static void forma4() {
+        List<String> listaSaudacoes = Stream
+            .generate(() -> "Seja bem vindo pela forma 4")
             .limit(2)
             .collect(Collectors.toList());
 
